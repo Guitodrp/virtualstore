@@ -1,13 +1,126 @@
-body {
+*{
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary-color: #f80;
+  --secondary-color:#00498d;
+  --dark-primary-color: #e07800;
+  --dark-secondary-color: #00315f;
+  --light-color: #e9e9e9;
+  --dark-color: #2c2c2c;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--dark-color);
+}
+
+a {
+text-decoration: none;
+  color: unset;
+}
+
+button{
+background-color: transparent;
+border: none;
+cursor: pointer;
+}
+
+/* Nav */
+
+.navbar {
+  background-color: #fff;
+  padding:  1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  left: 0;
+  box-shadow: 10px 0px 10px #ebebeb;
+
+}
+
+.navbar .inner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin-inline: auto;
+}
+  
+.logo {
+    color: var(--primary-color);
+}
+
+.logo span {
+    color: var(--dark-color);
+}
+
+nav ul {
+    display: flex;
+    list-style:  none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-icon-container svg {
+    height: 1.5rem;
+}
+
+.navbar-icon-container  .cart-button{
+    position: relative;
+}
+
+.navbar-icon-container  .cart-button .cart-count{
+    content: "";
+position: absolute;
+background-color: #f00;
+width: 1rem;
+height: 1rem;
+bottom: -8px;
+left: -8px;
+border-radius: 50%;
+color: #fff;
+padding: 0.7rem;
+font-size: 0.8rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.search-input-container{
+    align-items: center;
+    gap: 0.25rem;
+    border-bottom: 1px solid var(--dark-color);
+    padding: 0.5rem;
+    margin-right: 1rem;
+    display: flex;
+}
+
+.search-input-container input {
+    border: none;
+    outline: none;
+}
+
+.search-input-container svg {
+    height: 1rem;
+    color: #808080;
+}
+
+nav ul li:hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+.menu-button {
+    display: none;
 }
