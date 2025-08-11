@@ -341,7 +341,7 @@ background-color: var(--dark-primary-color);
 
 
 .exclusive-section{
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .exclusive-section .content{
@@ -362,35 +362,9 @@ background-color: var(--dark-primary-color);
   max-width: 400px;
 }
 
-/* ------------------------------------ Media ------------------------------------- */
-
-@media(max-width: 800px) {
-  .section-title h3{
-    font-size: 1.2rem;
-  }
-
-  .product .name, 
-  .product .price, 
-  .product .rate{
-    max-height: 1rem;
-    overflow: hidden;
-    font-size: 0.8rem;
-  }
-
-  .exclusive-section .content{
-    flex-direction: column-reverse;
-  }
-
-  .exclusive-section .content .right-side img{
-    max-width: 250px;
-    margin-bottom: 3rem;
-  }
-}
-
-
 
 /* -------------------------------------------------------------------------------- */
-/* -------------------------------- Comentts Section------------------------------- */
+/* -------------------------------- Comments Section------------------------------- */
 /* -------------------------------------------------------------------------------- */
 
 .comments{
@@ -424,3 +398,132 @@ justify-content: space-evenly;
   margin-top: 3rem;
   line-height: 3rem;
 }
+
+/* -------------------------------------------------------------------------------- */
+/* ---------------------------------- Footer Section------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+footer{
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+footer .content{
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+  gap: 2rem;
+}
+
+footer .page-inner{
+justify-content: center;
+}
+
+.download-options > *{
+  margin: 1rem 0;
+}
+
+.download-options > p:first-child{
+  font-weight: bold;
+}
+
+.download-options > div{
+  display: flex;
+  gap: 1rem;
+}
+
+.download-options > div img{
+  max-width: 150px;
+}
+
+.logo-footer{
+  text-align: center;
+}
+
+.logo-footer span{
+  color: #fff;
+}
+
+.logo-footer p{
+  max-width: 480px;
+  margin-top: 1rem;
+  margin-inline: auto;
+}
+
+footer .links h3{
+  margin-bottom: 0.8rem;
+}
+
+footer .links ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+hr{
+  margin-inline: 4rem;
+}
+
+footer .links li{
+ text-decoration: underline;
+}
+
+.copyright{
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* ------------------------------------ Media ------------------------------------- */
+
+@media(max-width: 800px) {
+  .section-title h3{
+    font-size: 1.2rem;
+  }
+
+  .product .name, 
+  .product .price, 
+  .product .rate{
+    max-height: 1rem;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+
+  .exclusive-section .content{
+    flex-direction: column-reverse;
+  }
+
+  .exclusive-section .content .right-side img{
+    max-width: 250px;
+    margin-bottom: 3rem;
+  }
+
+  .comments{
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  footer .content{
+    display: inline;
+  }
+
+  footer .content > div{
+    padding: 1rem;
+  }
+
+  .download-options > div img{
+    width: 120px;
+  }
+
+  .copyright{
+    font-size: 0.8rem;
+  }
+
+  footer .links ul, footer .links h3{
+    text-align: center;
+  }
+}
+
+

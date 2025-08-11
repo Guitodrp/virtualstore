@@ -1,5 +1,6 @@
 import React from 'react'
 
+//TODO: Bindar dados aqui
 export default function CommentsSection() {
     return (
         <div className='page-inner-content'>
