@@ -1,28 +1,50 @@
 import React from 'react'
-import { faCartShopping, faMoneyBill } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faMoneyBill, faStar as faStarSolid, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
+import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 
-export function Product({ id, image, name, rate, price }) {
+export function Product({ id, image, name, rating, price }) {
+    const renderStars = () => {
+        const stars = []
+        const fullStars = Math.floor(rating)
+        const hasHalfStar = rating % 1 >= 0.5
+        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0)
+
+        for (let i = 0; i < fullStars; i++) {
+            stars.push(<FontAwesomeIcon key={`full-${i}`} icon={faStarSolid} className="star full-star" />)
+        }
+
+        if (hasHalfStar) {
+            stars.push(<FontAwesomeIcon key="half" icon={faStarHalfAlt} className="star half-star" />)
+        }
+
+        for (let i = 0; i < emptyStars; i++) {
+            stars.push(<FontAwesomeIcon key={`empty-${i}`} icon={faStarRegular} className="star empty-star" />)
+        }
+
+        return stars
+    }
+
     return (
         <div className='product'>
-            <img alt={name} src={image}></img>
+            <img alt={name} src={image} />
             <p className='name'>{name}</p>
-            <p className='rate'> &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <div className='rate'>
+                {renderStars()}
+            </div>
             <p className='price'>{price}<span>Mzn</span></p>
 
             <div className='buttons'>
-
                 <Link to={`/products/${id}/checkout`} className='btn-icon'>
                     <span>Comprar Agora</span>
-                    <FontAwesomeIcon icon={faMoneyBill}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faMoneyBill} />
                 </Link>
 
                 <button className='btn-icon add-to-cart-btn'>
                     <span>Adicionar ao carrinho</span>
-                    <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faCartShopping} />
                 </button>
-
             </div>
         </div>
     )

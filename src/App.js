@@ -4,6 +4,9 @@ import { Navbar } from './components/Navbar';
 import { Header } from './components/Header';
 import { ProductsList } from './components/ProductsList';
 import { useEffect, useState } from 'react';
+import ExclusiveSection from './components/ExclusiveSection';
+import CommentsSection from './components/CommentsSection'
+import Footer from './components/Footer'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -13,8 +16,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => setProducts(data.products))
   }, [])
-
-  console.log('products', products)
 
   return (
     <Router>
@@ -36,8 +37,10 @@ function App() {
             <div className='main-content'>
               <ProductsList products={products} />
             </div>
-
           </div>
+          <ExclusiveSection />
+          <CommentsSection />
+          <Footer />
         </main>
       </div>
     </Router>

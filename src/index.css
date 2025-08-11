@@ -170,12 +170,6 @@ header .left-side p {
   align-items: center;
 }
 
-/* .see-btn span{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
-
 .see-btn:hover{
   background-color: var(--dark-primary-color);
   max-width: 200px;
@@ -185,11 +179,7 @@ header .right-side img {
   width: 100%;
 }
 
-
-/* -------------------------------------------------------------------------------- */
 /* ------------------------------------ Media ------------------------------------- */
-/* -------------------------------------------------------------------------------- */
-
 
 @media(max-width: 920px) {
   .nav h1 {
@@ -296,7 +286,7 @@ header .inner-content{
   font-weight: bold;
 }
 
-.product .rate{
+.product .rate, .comment .rate{
   color: var(--secondary-color);
   font-size: 1.3rem;
 
@@ -342,4 +332,95 @@ background-color: var(--dark-primary-color);
   height: 2px;
   background-color: var(--primary-color);
   margin: 4px auto 0 auto;
+}
+
+
+/* -------------------------------------------------------------------------------- */
+/* ------------------------------- Exclusive Section------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+
+.exclusive-section{
+  background-color: var(--secondary-color);
+}
+
+.exclusive-section .content{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  flex-direction: row-reverse;
+  padding: 5rem 1rem;
+}
+
+.exclusive-section .content .left-side{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exclusive-section .content .right-side img{
+  max-width: 400px;
+}
+
+/* ------------------------------------ Media ------------------------------------- */
+
+@media(max-width: 800px) {
+  .section-title h3{
+    font-size: 1.2rem;
+  }
+
+  .product .name, 
+  .product .price, 
+  .product .rate{
+    max-height: 1rem;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+
+  .exclusive-section .content{
+    flex-direction: column-reverse;
+  }
+
+  .exclusive-section .content .right-side img{
+    max-width: 250px;
+    margin-bottom: 3rem;
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------------- */
+/* -------------------------------- Comentts Section------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+.comments{
+display: flex;
+padding: 4rem 1rem;
+justify-content: space-evenly;
+}
+
+.comment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 30%;
+  text-align: center;
+  box-shadow: 0px 0px 15px #afafaf;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  gap: 0.5rem;
+}
+
+.comment :hover{
+  transform: translateY(-5px);
+}
+
+.comment p:first-child {
+  font-weight: bold;
+  font-size: 5rem;
+  color: var(--dark-primary-color);
+  margin-top: 3rem;
+  line-height: 3rem;
 }
