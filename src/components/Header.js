@@ -2,7 +2,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 
-export function Header() {
+export default function Header() {
     return (
         <header>
             <div className='inner-content'>

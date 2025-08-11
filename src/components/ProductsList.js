@@ -1,7 +1,7 @@
 import React from 'react'
 import { Product } from './Product'
 
-export function ProductsList({
+export default function ProductsList({
     products
 }) {
     return (

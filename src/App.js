@@ -1,15 +1,14 @@
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Header } from './components/Header';
-import { ProductsList } from './components/ProductsList';
 import { useEffect, useState } from 'react';
-import ExclusiveSection from './components/ExclusiveSection';
-import CommentsSection from './components/CommentsSection'
 import Footer from './components/Footer'
+import HomePage from './components/pages/HomePage'
+import ProductsPage from './components/pages/ProductsPage'
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [showSideCart, setShowSideCart] = useState(false)
 
   useEffect(() => {
     fetch('/db.json')
@@ -20,28 +19,19 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar setShowSideCart={setShowSideCart} />
         <main>
-          <Header />
-          <div className='page-inner-content'>
+          <Routes>
+            <Route path='/' element={
+              <HomePage products={products} setShowSideCart={setShowSideCart} showSideCart={showSideCart} />
+            } />
+            <Route path='/products' element={
+              <ProductsPage products={products} />
+            } />
 
-            <div className='section-title'>
-              <h3>
-                Produtos Selecionados
-              </h3>
-              <div className='underline'>
-
-              </div>
-            </div>
-
-            <div className='main-content'>
-              <ProductsList products={products} />
-            </div>
-          </div>
-          <ExclusiveSection />
-          <CommentsSection />
-          <Footer />
+          </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );
