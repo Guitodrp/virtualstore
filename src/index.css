@@ -624,3 +624,60 @@ footer .links li:hover{
 .sidebar-cart.show{
   display: block ;
 }
+
+/* -------------------------------------------------------------------------------- */
+/* ------------------------------------ About Us ---------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+.item-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+.item-about img{
+  width: 800px;
+  margin-bottom: 1rem;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px #2c2c2c;
+}
+
+.item-about p {
+  font-size: large;
+  max-width: 800px;
+  margin-top: 1rem;
+  margin-inline: auto;
+  text-align: justify;
+}
+
+.item-about h3{
+  max-width: 500px;
+  margin-top: 2rem;
+  margin-inline: auto;
+}
+
+.painel-about{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.painel-about .item-painel{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.painel-about .item-painel img{
+  width: 70px;
+}
+
+.painel-about .item-painel p:first-of-type{
+  font-size: 1.2rem;
+  font-weight: bold;
+}

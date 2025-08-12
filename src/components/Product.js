@@ -26,6 +26,10 @@ export function Product({ id, image, name, rating, price }) {
         return stars
     }
 
+    //Formata preço
+    const formatPrice = (value) =>
+        Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
     return (
         <div className='product'>
             <img alt={name} src={image} />
@@ -33,8 +37,7 @@ export function Product({ id, image, name, rating, price }) {
             <div className='rate'>
                 {renderStars()}
             </div>
-            <p className='price'>{price}<span>Mzn</span></p>
-
+            <p className='price'>{formatPrice(price)}<span> R$</span></p>
             <div className='buttons'>
                 <Link to={`/products/${id}/checkout`} className='btn-icon'>
                     <span>Comprar Agora</span>
