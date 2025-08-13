@@ -681,3 +681,20 @@ footer .links li:hover{
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/* -------------------------------------------------------------------------------- */
+/* ------------------------------------ Contact  ---------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+.painel-contact{
+display: flex;
+/* height: 800px; */
+padding: 1rem;
+gap: 0.5rem;
+align-items: center;
+justify-content: space-between;
+}
+
+.item-contact{
+
+}

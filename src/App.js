@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import HomePage from './components/pages/HomePage'
 import ProductsPage from './components/pages/ProductsPage'
 import About from './components/pages/About';
+import Contact from './components/pages/Contact';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -34,6 +35,10 @@ function App() {
             <Route path='/about'
               element={
                 <About />
+              } />
+            <Route path='/contact'
+              element={
+                <Contact />
               } />
           </Routes>
         </main>
