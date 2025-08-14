@@ -5,24 +5,20 @@ import ProductsList from "../ProductsList";
 import ExclusiveSection from "../ExclusiveSection";
 import CommentsSection from "../CommentsSection";
 
-export default function HomePage({ products, setShowSideCart, showSideCart }) {
+export default function HomePage({ products, setShowSideCart, showSideCart, addProductCart, selectedProducts, totalCart, removeProductCart }) {
     return (
         <>
             <Header />
-            <SidebarCart setShowSideCart={setShowSideCart} showSideCart={showSideCart} />
+            <SidebarCart selectedProducts={selectedProducts} removeProductCart={removeProductCart} totalCart={totalCart} setShowSideCart={setShowSideCart} showSideCart={showSideCart} />
             <div className='page-inner-content'>
 
                 <div className='section-title'>
-                    <h3>
-                        Produtos Selecionados
-                    </h3>
-                    <div className='underline'>
-
-                    </div>
+                    <h3> Produtos Selecionados </h3>
+                    <div className='underline' />
                 </div>
 
                 <div className='main-content'>
-                    <ProductsList products={products} />
+                    <ProductsList addProductCart={addProductCart} products={products} />
                 </div>
             </div>
             <ExclusiveSection />

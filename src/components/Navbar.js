@@ -3,7 +3,7 @@ import { faBars, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-export function Navbar({ setShowSideCart }) {
+export function Navbar({ setShowSideCart, selectedProducts }) {
 
     const [show, setShow] = useState(false);
 
@@ -27,7 +27,7 @@ export function Navbar({ setShowSideCart }) {
                     </div>
                     <button className='cart-button' onClick={() => setShowSideCart(true)}>
                         <FontAwesomeIcon icon={faShoppingCart} />
-                        <div className='cart-count'>15</div>
+                        <div className='cart-count'>{selectedProducts.length}</div>
                     </button>
                     <button className='menu-button' onClick={() => setShow(!show)}>
                         <FontAwesomeIcon icon={faBars} />

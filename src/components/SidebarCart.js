@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
 import SidebarProduct from "./SidebarProduct"
 
-export default function SidebarCart({ showSideCart, setShowSideCart }) {
+export default function SidebarCart({ showSideCart, setShowSideCart, selectedProducts, totalCart, removeProductCart }) {
     return (
         <aside className={`sidebar-cart ${showSideCart && "show"}`}>
             <div className='top'>
@@ -14,13 +14,11 @@ export default function SidebarCart({ showSideCart, setShowSideCart }) {
             </div>
 
             <div className='sidebar-products'>
-                <SidebarProduct />
-                <SidebarProduct />
-                <SidebarProduct />
+                {selectedProducts.map(product => (<SidebarProduct key={product.id} {...product} removeProductCart={removeProductCart} />))}
             </div>
 
             <div className='total-container'>
-                <b>Total: </b> 1000 R$
+                <b>Total: </b>{totalCart} R$
             </div>
 
             <Link to="/cart/checkout" className='btn-icon'>
@@ -28,7 +26,12 @@ export default function SidebarCart({ showSideCart, setShowSideCart }) {
                 <FontAwesomeIcon icon={faMoneyBill} />
             </Link>
 
-            <i>Seu carrinho está vazio!</i>
+            {
+                selectedProducts.length === 0 && <>
+                    <i>Seu carrinho está vazio!</i>
+                </>
+            }
+
         </aside>
     )
 }

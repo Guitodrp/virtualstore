@@ -4,7 +4,7 @@ import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 
-export function Product({ id, image, name, rating, price }) {
+export function Product({ id, image, name, rating, price, addProductCart }) {
     const renderStars = () => {
         const stars = []
         const fullStars = Math.floor(rating)
@@ -44,7 +44,7 @@ export function Product({ id, image, name, rating, price }) {
                     <FontAwesomeIcon icon={faMoneyBill} />
                 </Link>
 
-                <button className='btn-icon add-to-cart-btn'>
+                <button onClick={() => addProductCart(id)} className='btn-icon add-to-cart-btn'>
                     <span>Adicionar ao carrinho</span>
                     <FontAwesomeIcon icon={faCartShopping} />
                 </button>

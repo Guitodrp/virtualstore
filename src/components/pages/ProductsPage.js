@@ -6,12 +6,8 @@ export default function ProductsPage({ products }) {
         <div className='page-inner-content'>
 
             <div className='section-title'>
-                <h3>
-                    Nossos Produtos
-                </h3>
-                <div className='underline'>
-
-                </div>
+                <h3> Nossos Produtos</h3>
+                <div className='underline' />
             </div>
 
             <div className='main-content'>
